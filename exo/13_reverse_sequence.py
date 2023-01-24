@@ -1,25 +1,24 @@
-# # def reverse_sequence():
-# #     values = [0, 1, 2, 3, 4]
+DATA_LIST = [0, 1, 2, 3, 4]
 
-# #     for i in len(values)-1:
-# #         val = values
-# #         seq = val
-# #         reverse_ = val.reverse()
-# #         print(f"{seq} -> {reverse_}")
+def reverse_seq_list(listes:list, fin_value):
+    length = list(range(1, len(listes)+1))[::-1]
+    for i in length:
+        liste_1 = listes
+        listes = list(reversed(listes[:i])) + listes[i:]
+        print(f"{liste_1} -> {listes}")
+    print("index: {} value: {}".format(listes.index(fin_value), listes[listes.index(fin_value)]))
 
-# # reverse_sequence()
+reverse_seq_list(DATA_LIST, 3)
 
-# values = [0, 1, 2, 3, 4]
-# print(values)
-# values = reversed(values).
-# print(values)
+"""
+[0, 1, 2, 3, 4] -> [4, 3, 2, 1, 0]
+[4, 3, 2, 1, 0] -> [1, 2, 3, 4, 0]
+[1, 2, 3, 4, 0] -> [3, 2, 1, 4, 0]
+[3, 2, 1, 4, 0] -> [2, 3, 1, 4, 0]
 
+0 1 2 3 4 -> 4 3 2 1 0
+4 3 2 1 0 -> 1 2 3 4 0
+1 2 3 4 0 -> 3 2 1 4 0
+3 2 1 4 0 -> 2 3 1 4 0
 
-def reverse_number():
-
-    L = [0,1,2,3,4]
-    for i in range(len(L)-1):
-        print("{}-> {}".format(L, L[::-i]))
-        L = L[::-1]
-
-reverse_number()
+"""
